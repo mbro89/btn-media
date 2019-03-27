@@ -15,21 +15,44 @@ body { background-color: white;}
   height: 3em;
   overflow: hidden;
   margin: 0 0.2em;
+  position: relative;
   width: 3em;
  }
+
+.btn::before {
+  background: #7f8fa6;
+  content: "";
+  height: 120%;
+  left: -110%;
+  position: absolute;
+  top: 90%;
+  transform: rotate(45deg);
+  width: 120%;
+}
+
+.btn:hover::before {
+  animation: media 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+
+@keyframes media {
+  0% { left: -110%; top: 90%;}
+  50% { left: 10%; top: -30%;}
+  100% { left: -10%; top: -10%;}
+}
 
 .btn-ico {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-  height: 70%;
-  margin: 15%;
+  background-size: 50%;
+  height: 100%;
   transition: 0.2s linear;
-  width: 70%;
+  width: 100%;
 }
 
 .btn-ico:hover { transform: scale(1.3);}
 
-.btn-fb { background-image: url('img/fb.png');}
+.btn-fb { background-image: url('img/fb.png'); background-size: 25%;}
 .btn-yt { background-image: url('img/yt.png');}
 .btn-twit { background-image: url('img/twit.png');}
